@@ -1,6 +1,19 @@
-.Product{
-    border:1px solid white;
-    border-radius: 20px;
-    margin-bottom: 15px;
-    padding-top:  0 5px 0 5px ;
+.Product {
+  border: 1px solid #000000;
+  
+  margin-bottom: 15px;
+  border-radius: 14px;
+  margin-left:15px ;
+  width: 200px;
+  height: 160px;
+}
+
+.Product ul {
+  padding-left: 20px; /* ensures bullets stay inside */
+  margin: 0;
+  list-style-position: inside; /* bullets stay within the box */
+}
+
+.Product li {
+  margin-bottom: 4px;
 }
