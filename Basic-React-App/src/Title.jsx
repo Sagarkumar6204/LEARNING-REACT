@@ -1,14 +1,11 @@
 function Title(){
-let name= "sagar";
-  return(
-    <div>
-   <h1>I am a Title</h1>
-   <h3>I am the Description</h3>
-<p>2 * 2 ={ 2*2}</p>
+    let name="sagar";
 
-
-    </div>
-// curly braces wala js ka window open kardiya js code likhne ke liye qki waha curly braces hai
-  );
+  return (
+  <div>
+        <p> 2*2 ={2*2}</p>
+        <p>Hi, {name.toUpperCase()}</p>
+  </div>
+  )
 }
 export default Title;
