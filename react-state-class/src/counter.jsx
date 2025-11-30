@@ -2,10 +2,17 @@ import { useState } from "react";
 
 export default function counter() {
   let [count, setCount] = useState(0);
+  
    let incCount=()=>{
         // count=count+1;
-        setCount(count+1);
-        console.log(count);
+        setCount((currCount)=>{
+          return currCount +1;
+        });
+        setCount((currCount)=>{
+          return currCount+1;
+        });
+
+      
     };
 
   return (

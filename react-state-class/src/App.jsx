@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <h1>States in React</h1>
-      <LikeButton />   {/* ✅ Proper JSX component usage */}
+      <Counter />   {/* ✅ Proper JSX component usage */}
     </div>
   )
 }
