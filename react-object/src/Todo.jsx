@@ -77,9 +77,6 @@ export default function Todo() {
           </li>
         ))}
       </ul>
-
-
-     
       <br />
       <br />
       <button onClick={upperCaseAll}>UpperCase-All</button>
