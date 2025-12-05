@@ -1,0 +1,12 @@
+.Ticket{
+    border:1px solid pink;
+    border-radius: 14px;
+    width: 300px;
+    margin-bottom: 15px;
+   align-items: center;
+   justify-content: center;
+   margin-left:10rem;
+   color: black;
+   font-weight: bold;
+   
+}
