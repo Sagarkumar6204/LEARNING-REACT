@@ -1,69 +1,73 @@
 import React, { useState } from "react";
+import{useFormik} from 'formik';
+const validate=(values)=>{
+  const errors={};
+  if(!values.userName){
+    errors.userName="Required"; 
+  }
+  return errors;
+};
 
 export default function CommentsForm({addNewComment}) {
-  const [formData, setFormData] = useState({
-    userName: "",
-    remarks: "",
-    rating: 5,
+   const formik = useFormik({
+    initialValues: {
+      userName: "",
+      remarks: "",
+      rating: 5,
+    },
+    validate,
+    onSubmit: (values, { resetForm }) => {
+      addNewComment(values); // pass values to parent
+      alert(
+        `Username: ${values.userName}\nRemarks: ${values.remarks}\nRating: ${values.rating}`
+      );
+      console.log(values);
+      resetForm(); // clear form after submit
+    },
   });
-let show = (e) => {
-  e.preventDefault(); // stop form reload first
 
-  addNewComment(formData); // then add the comment
 
-  alert(`Username: ${formData.userName}\nRemarks: ${formData.remarks}\nRating: ${formData.rating}`);
-  console.log(formData);
-
-  setFormData({
-    userName: "",
-    remarks: "",
-    rating: 5,
-  });
-};
 
   return (
     <div>
       <h4>Give a Comment</h4>
-      <form>
+      <form onSubmit={formik.handleSubmit}>
         <label htmlFor="username">Username: </label>
         <input
-        id="username"
+          id="username"
           type="text"
           name="userName"
-          value={formData.userName}
-          onChange={(e) =>
-            setFormData({ ...formData, userName: e.target.value })
-          }
+          value={formik.values.userName}
+          onChange={formik.handleChange}
           placeholder="username"
         />
+        {formik.errors.userName && <div style={{ color: "red" }}>{formik.errors.userName}</div>}
         <br /><br />
-          <label htmlFor="remarks">Remarks: </label>
+
+        <label htmlFor="remarks">Remarks: </label>
         <textarea
-        id="remarks"
+          id="remarks"
           name="remarks"
-          value={formData.remarks}
-          onChange={(e) =>
-            setFormData({ ...formData, remarks: e.target.value })
-          }
+          value={formik.values.remarks}
+          onChange={formik.handleChange}
           placeholder="Remarks"
         />
-        <br />
-<label htmlFor="rating">Rating: </label>
+        <br /><br />
+
+        <label htmlFor="rating">Rating: </label>
         <input
-        id="rating"
+          id="rating"
           type="number"
           name="rating"
-          value={formData.rating}
-          onChange={(e) =>
-            setFormData({ ...formData, rating: Number(e.target.value) })
-          }
+          value={formik.values.rating}
+          onChange={formik.handleChange}
           min={1}
           max={5}
           placeholder="rating"
         />
         <br /><br />
 
-        <button onClick={show} type="submit">Add Comment</button>
+        <button type="submit">Add Comment</button>
       </form>
     </div>
   );
