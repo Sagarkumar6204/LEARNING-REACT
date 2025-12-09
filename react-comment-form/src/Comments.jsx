@@ -12,7 +12,7 @@ export default function Comment(){
         console.log("added new comment!!");
         
     }
-return(
+return( 
     <>
         <h3>All Comments</h3>
         {comments.map((comment, idx) => (
