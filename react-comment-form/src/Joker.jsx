@@ -7,7 +7,7 @@ export default function Joker(){
         let jsonResponse=await response.json();
         console.log(jsonResponse);
         setJoke({setup:jsonResponse.setup,punchline:jsonResponse.punchline});
-
+        
     }
     useEffect(()=>{async function getFirstJoke(){
         let response=await fetch(URL);
