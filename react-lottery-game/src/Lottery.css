@@ -1,0 +1,9 @@
+/* .ticket{
+    border: 2px solid pink;
+    border-radius: 14px;
+} */
+span {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+}

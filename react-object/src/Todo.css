@@ -1,0 +1,132 @@
+/* Container styling */
+.todo-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Input section */
+.userInput {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.userInput input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.userInput input:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+
+.userInput button {
+  padding: 10px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.userInput button:hover {
+  background: #0056b3;
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Task text */
+.todoItem span {
+  flex: 1;
+  font-size: 16px;
+  white-space: nowrap;       /* ek hi line me rakhe */
+  overflow: hidden;          /* bahar ka text hide kare */
+  text-overflow: ellipsis;   /* ... dikhaye */
+}
+
+
+/* Buttons inside list */
+.todoItem button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.todoItem button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Specific button styles */
+.done {
+  background: #28a745;
+  color: white;
+}
+
+.done:hover {
+  background: #1e7e34;
+}
+
+.delete {
+  background: #dc3545;
+  color: white;
+}
+
+.delete:hover {
+  background: #a71d2a;
+}
+
+.uppercase {
+  background: #ffc107;
+  color: black;
+}
+
+.uppercase:hover {
+  background: #e0a800;
+}
+
+/* UpperCase-All button */
+button:last-of-type {
+  padding: 10px 18px;
+  background: #6f42c1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:last-of-type:hover {
+  background: #563d7c;
+}
