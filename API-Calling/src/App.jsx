@@ -17,7 +17,7 @@ const App = () => {
   }
   return (
     <div>
-      <button onClick={axiosApiCall}>Get Data!</button>
+      <button onClick={axiosApiCall                           }>Get Data!</button>
     </div>
   )
 }
